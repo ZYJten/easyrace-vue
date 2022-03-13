@@ -49,8 +49,8 @@
       </el-menu>
     </el-header>
     <el-container>
-      <el-aside v-if="asideOn" width="350px">
-        <div class="block" style="height: 280px">
+      <el-aside v-if="asideOn" width="28%">
+        <div class="block" style="height: 50vh">
           <!-- 工作台 -->
           <div class="title">我的工作台</div>
           <el-row style="margin: 0px 20px; text-align: center">
@@ -105,13 +105,13 @@
             </el-col>
           </el-row>
         </div>
-        <div class="block" style="height: 380px">
+        <div class="block" style="height: 50vh">
           <span class="asideleft2">浏览</span>
           <el-table
             :data="tableData"
             size="mini"
-            style="width: 100%"
-            height="300px"
+            style="width: 100%;"
+            height="37vh"
             align="center"
           >
             <el-table-column prop="name" label="名称" width="220px">
@@ -313,5 +313,10 @@ export default {
 }
 .menucell {
   padding: 30px 30px;
+}
+.menucell:hover {
+  font-size:15px;
+  background: rgb(245, 245, 245);
+  box-shadow: 0px 1px 5px rgb(211, 210, 210);
 }
 </style>

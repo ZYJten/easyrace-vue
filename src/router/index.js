@@ -152,11 +152,12 @@ const routes = [
         name: 'personal',
         component: () => import('../components/Personal')
       },
-      {
-        path: '/security',
-        name: 'security',
-        component: () => import('../components/Security'),
-      },
+      // {
+      //   path: '/security',
+      //   name: 'security',
+      //   component: () => import('../components/Security'),
+      // },
+
     ]
   }
 ]
