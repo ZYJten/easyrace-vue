@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <el-page-header @back="goBack" content="详情页面">
     </el-page-header>
     <div id="detail_app">
@@ -28,7 +29,7 @@
       </div>
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="竞赛信息" name="first">
-          <DetailsInfo :raceInfo="raceList" :dateTime="dateTime"/>
+          <!-- <DetailsInfo :raceInfo="raceList" :dateTime="dateTime"/> -->
         </el-tab-pane>
         <el-tab-pane label="通知公告" name="second">通知公告</el-tab-pane>
       </el-tabs>
@@ -69,9 +70,9 @@ export default {
       activeName: 'first',
       raceInfo: [],
       dateTime: {
-        createTime: '',
-        endTime: '',
-        day: ''
+        createTime: '5月25日',
+        endTime: '8月20日',
+        day: '100天'
       },
       tid:'',
       raceList: [],
@@ -108,7 +109,7 @@ export default {
     },
     async myTeam() {
       const {data:res} = await myTeam(this.raceList.id)
-      this.team = res.data.data
+      // this.team = res.data.data
     },
     async signUp(id,raceClass,tid) {
       const {data: res} = await signUp(id,raceClass,tid)
@@ -154,9 +155,9 @@ export default {
       const {data: res} = await getInfoById(id)
       console.log(res)
       this.raceInfo = res.data.data
-      this.dateTime.day = this.getDatePoor(this.raceInfo.endTime, new Date())
-      this.dateTime.createTime = this.toDate(this.raceInfo.createTime)
-      this.dateTime.endTime = this.toDate(this.raceInfo.endTime)
+      // this.dateTime.day = this.getDatePoor(this.raceInfo.endTime, new Date())
+      // this.dateTime.createTime = this.toDate(this.raceInfo.createTime)
+      // this.dateTime.endTime = this.toDate(this.raceInfo.endTime)
     }
   },
   mounted() {
@@ -164,9 +165,9 @@ export default {
   created() {
     // let id = this.$route.query.id
     let routeParams = this.$route.query.info
-    this.raceList = JSON.parse(routeParams);
+    // this.raceList = JSON.parse(routeParams);
     // let info = routeParams.info
-    this.getInfo(this.raceList.infoId)
+    // this.getInfo(this.raceList.infoId)
 
   }
 }
